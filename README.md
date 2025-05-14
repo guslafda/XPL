@@ -6,7 +6,7 @@ kindly made available to me by Philip Roelli at the University of Zürich (https
 publishing the resulting model in case it can be useful to anyone interested in "Christian Latin".
 
 For details about the model, including training and validation, as well as a problematization of the
-concept of Christian Latin, refer to Lafage (2025) below.
+concept of Christian Latin, refer to Lafage (2025) below (I will soon publish a short version in English).
 
 For information about the original LatinBERT model, visit:
 
@@ -25,7 +25,29 @@ of unseen documents from the *Patrologia Latina*, showing its sensitivity to Chr
 
 1. Install the requirements listed on https://github.com/dbamman/latin-bert/blob/master/requirements.txt.
 2. Download the subword encoder from here: https://github.com/dbamman/latin-bert/blob/master/models/subword_tokenizer_latin/latin.subword.encoder
-3. 
+3. Download tokenizer_debug.py from this repository. It is a revised version of Patrick J. Burns's and Todd Cooks's Wordtokenizer, which did not tokenize enclitic *-que*, as per bug fix described in https://github.com/cltk/cltk/issues/1190.
+4. If you're running Powershell like me, download and run the download.ps1 file, in order to download the model, or download the model manually by visiting:
+
+https://drive.google.com/file/d/{FILE_ID}/view (replace {FILE_ID} with the file_id in the download.ps1 file).
+
+**MLM task**
+
+To verify that you have imported the model correctly, you can try to perform a simple MLM task with the mlm_xpl.py script. Modify the script by adding:
+
+1. The system path where you have saved tokenizer_debug.py (sys.path.append).
+2. The path to the downloaded model (bertPath) and to the subword tokenizer (tokenizerPath) under the arguments part (note that you have the possibility to import LatinBERT as well and select it as an argument):
+
+	if model_name == 'latinbert':
+		bertPath = "xxx\\latin_bert"
+		tokenizerPath = "xxx\\latin.subword.encoder"
+
+	if model_name == 'xpl':
+		bertPath = "xxx\\XPL"
+		tokenizerPath = "xxx\\latin.subword.encoder"
+
+The script takes 3 arguments: a sentence, a word to mask and the model to use (LatinBERT or XPL). Example query (Powershell):
+
+*python mlm_xpl.py -s 'Si vis pacem, para bellum.' -w 'pacem' -m 'xpl'*
 
 **References**
 
