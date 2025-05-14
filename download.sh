@@ -1,12 +1,9 @@
-#!/bin/bash
-
-FILE_ID="1BqT-PTSJD1Id0BHsffuUt_UGbYzig2C_"
-FILE_NAME="xpl.tar"
+$FILE_ID = "1BqT-PTSJD1Id0BHsffuUt_UGbYzig2C_"
+$FILE_NAME = "xpl.tar"
 
 gdown --id $FILE_ID -O $FILE_NAME
-
-mkdir -p models
-mv $FILE_NAME models/
-cd models
+New-Item -ItemType Directory -Force -Path "model"
+Move-Item $FILE_NAME -Destination "model"
+Set-Location "model"
 tar -xf $FILE_NAME
-rm $FILE_NAME
+Remove-Item $FILE_NAME
