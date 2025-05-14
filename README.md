@@ -1,4 +1,4 @@
-# XPLatinBERT
+# XPL
 
 This model is a fine-tuned version of LatinBERT for the purpose of my MA thesis.
 LatinBERT was fine-tuned in an unsupervised MLM-task on the *Patrologia Latina* corpus from the *Corpus Corporum* project,
