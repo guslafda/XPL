@@ -1,12 +1,15 @@
 #!/bin/bash
 
 FILE_ID="1BqT-PTSJD1Id0BHsffuUt_UGbYzig2C_"
-OUTPUT_FILE="xpl.tar"
+FILE_NAME="xpl.tar"
 
-curl -L -o $OUTPUT_FILE "https://drive.google.com/uc?export=download&id=${FILE_ID}"
+CONFIRM=$(curl -sc /tmp/cookie "https://drive.google.com/uc?export=download&id=${FILE_ID}" | \
+grep -o 'confirm=[^&]*' | sed 's/confirm=//')
+
+curl -Lb /tmp/cookie "https://drive.google.com/uc?export=download&confirm=${CONFIRM}&id=${FILE_ID}" -o "${FILE_NAME}"
 
 mkdir -p models
-mv $OUTPUT_FILE models/
+mv "${FILE_NAME}" models/
 cd models
-tar -xf $OUTPUT_FILE
-rm $OUTPUT_FILE
+tar -xf "${FILE_NAME}"
+rm "${FILE_NAME}"
