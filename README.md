@@ -37,12 +37,12 @@ To verify that you have imported the model correctly, you can try to perform a s
 1. The system path where you have saved tokenizer_debug.py (sys.path.append).
 2. The path to the downloaded model (bertPath) and to the subword tokenizer (tokenizerPath) under the arguments part (note that you have the possibility to import LatinBERT as well and select it as an argument):
 
-    bertPath = "xxx\\XPL"
-    tokenizerPath = "xxx\\latin.subword.encoder"
+    ```bertPath = "xxx\\XPL"```
+    ```tokenizerPath = "xxx\\latin.subword.encoder"```
 
 The script takes 3 arguments: a sentence, a word to mask and the model to use (LatinBERT or XPL). Example query (Powershell):
 
-*python mlm_xpl.py -s 'Si vis pacem, para bellum.' -w 'pacem' -m 'xpl'*
+<pre>python mlm_xpl.py -s 'Si vis pacem, para bellum.' -w 'pacem' -m 'xpl'</pre>
 
 **References**
 
