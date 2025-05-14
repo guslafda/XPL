@@ -23,7 +23,9 @@ of unseen documents from the *Patrologia Latina*, showing its sensitivity to Chr
 
 **Installation**
 
-To install the model, follow the instructions on https://github.com/dbamman/latin-bert.
+1. Install the requirements listed on https://github.com/dbamman/latin-bert/blob/master/requirements.txt.
+2. Download the subword encoder from here: https://github.com/dbamman/latin-bert/blob/master/models/subword_tokenizer_latin/latin.subword.encoder
+3. 
 
 **References**
 
