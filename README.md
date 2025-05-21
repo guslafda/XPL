@@ -46,7 +46,7 @@ The script takes 3 arguments: a sentence, a word to mask and the model to use (L
 
 **References**
 
-Lafage, D. (2025). *Corpus Christi. En diakron korpuslingvistisk studie av kristendomens påverkan på latinsk semantik.* Göteborgs Universitet.
+Lafage, D. (2025). *Corpus Christi. En korpuslingvistisk studie av latinets semantiska utveckling i kristendomens spår.* Göteborgs Universitet.
 
 Schlechtweg, D., McGillivray, B., Hengchen, S., Dubossarsky, H. & Tahmasebi, N. (2020). SemEval-2020 Task 1: Unsupervised Lexical Semantic Change Detection. 
   In Herbelot et al. (Red.), *Proceedings of the Fourteenth Workshop on Semantic Evaluation* (pp. 1–23). Barcelona.
